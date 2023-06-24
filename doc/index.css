@@ -1,0 +1,205 @@
+* {
+  --color-blanco-grisaseo: #f2f2f2;
+  --color-gris-suave: #d9d9d9;
+  --color-gris-medio: #bfbfbf;
+  --color-gris-oscuro: #808080;
+  --color-gris-mas-oscuro: #3d3d3d;
+
+  --font-weight-uno: 400;
+  --font-weight-dos: 600;
+
+  --padding-separacion-contenedores: 40px;
+}
+
+body {
+  background-color: var(--color-blanco-grisaseo);
+}
+
+/* --- HEADER --- */
+
+/* IMPLEMENTAR MÁS ADELANTE
+
+.navegacion{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+*/
+
+/* --- MAIN --- */
+.contenedor-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 45px 24px;
+  padding-bottom: 0px;
+  max-width: 390px;
+}
+.titulo {
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: var(--font-weight-dos);
+  text-align: center;
+}
+.contenedor-subtitulo {
+  display: flex;
+  margin: auto;
+  max-width: 450px;
+  padding: 25px 24px;
+}
+.subtitulo {
+  font-family: Source Sans Pro, Arial, sans-serif;
+  text-align: center;
+}
+.contenedor-botones {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0px 24px;
+  padding-top: 30px;
+  max-width: 375px;
+}
+.botones {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 8px;
+  height: 55px;
+  border-radius: 6px;
+}
+
+/* SOBRE NOSOTROS */
+
+.sobre-nosotros {
+  margin: 100px 0;
+}
+.contenedor-informacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 25px 24px;
+}
+.titulo-seccion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: var(--font-weight-dos);
+  text-align: center;
+}
+.descripcion {
+  display: flex;
+  font-family: Source Sans Pro, Arial, sans-serif;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 0px;
+  max-width: 400px;
+}
+
+/* CAMBIOS DIVISAS */
+
+#cambios-de-divisas {
+  margin: 80px 0;
+}
+.contenedor-titulo-cambios {
+  display: flex;
+}
+.titulo-cambios {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: var(--font-weight-dos);
+  text-align: center;
+}
+.contenedor-tabla-cambios {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 375px;
+}
+.tablero {
+  margin: 25px 0;
+}
+.fila {
+  text-align: center;
+  padding: 25px;
+}
+.columna {
+  border-bottom: 1px solid var(--color-gris-medio);
+  padding: 25px;
+}
+.valor-divisa {
+  text-align: end;
+}
+.fecha-cambio {
+  text-align: end;
+}
+
+/* CONVERSOR DE DIVISAS */
+
+.contenedor-botones-conversion {
+  display: flex;
+  margin: auto;
+  padding: 15px 0;
+  max-width: 300px;
+}
+.contenedor-input {
+  display: flex;
+  margin: auto;
+  padding: 20px 0;
+  max-width: 300px;
+}
+.lista-monedas,
+select.lista-monedas-selectores {
+  max-height: 230px;
+  overflow: auto;
+}
+.divisa-elegida {
+  min-width: 69.99px;
+  max-width: 69.99px;
+}
+.contenedor-icono-conversion {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 300px;
+}
+.icono-conversion {
+  font-size: 40px;
+}
+.contenedor-respuesta-conversion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+.respuesta-conversion::before {
+  content: "-";
+  color: var(--color-blanco-grisaseo);
+  width: 223px;
+  height: 24px;
+}
+.respuesta-valor-divisa-usuario::before {
+  content: "-";
+  color: var(--color-blanco-grisaseo);
+  width: 223px;
+  height: 24px;
+}
+.respuesta-conversion,
+.respuesta-valor-divisa-usuario {
+  font-family: Source Sans Pro, Arial, sans-serif;
+  padding: 5px 0;
+  margin: auto;
+}
+.contenedor-boton-convertir {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0px 24px;
+  max-width: 375px;
+}
+
+/* FOOTER */
