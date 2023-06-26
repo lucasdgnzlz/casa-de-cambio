@@ -99,44 +99,6 @@ body {
   max-width: 400px;
 }
 
-/* CAMBIOS DIVISAS */
-
-#cambios-de-divisas {
-  margin: 80px 0;
-}
-.contenedor-titulo-cambios {
-  display: flex;
-}
-.titulo-cambios {
-  font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: var(--font-weight-dos);
-  text-align: center;
-}
-.contenedor-tabla-cambios {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  max-width: 375px;
-}
-.tablero {
-  margin: 25px 0;
-}
-.fila {
-  text-align: center;
-  padding: 25px;
-}
-.columna {
-  border-bottom: 1px solid var(--color-gris-medio);
-  padding: 25px;
-}
-.valor-divisa {
-  text-align: end;
-}
-.fecha-cambio {
-  text-align: end;
-}
-
 /* CONVERSOR DE DIVISAS */
 
 .contenedor-botones-conversion {
@@ -149,6 +111,7 @@ body {
   display: flex;
   margin: auto;
   padding: 20px 0;
+  padding-bottom: 0px;
   max-width: 300px;
 }
 .lista-monedas,
@@ -193,6 +156,7 @@ select.lista-monedas-selectores {
   font-family: Source Sans Pro, Arial, sans-serif;
   padding: 5px 0;
   margin: auto;
+  max-width: 500px;
 }
 .contenedor-boton-convertir {
   display: flex;
@@ -200,6 +164,44 @@ select.lista-monedas-selectores {
   margin: auto;
   padding: 0px 24px;
   max-width: 375px;
+}
+
+/* CAMBIOS DIVISAS */
+
+#cambios-de-divisas {
+  margin: 80px 0;
+}
+.contenedor-titulo-cambios {
+  display: flex;
+}
+.titulo-cambios {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: var(--font-weight-dos);
+  text-align: center;
+}
+.contenedor-tabla-cambios {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 375px;
+}
+.tablero {
+  margin: 25px 0;
+}
+.fila {
+  text-align: center;
+  padding: 25px;
+}
+.columna {
+  border-bottom: 1px solid var(--color-gris-medio);
+  padding: 25px;
+}
+.valor-divisa {
+  text-align: end;
+}
+.fecha-cambio {
+  text-align: end;
 }
 
 /* FOOTER */
