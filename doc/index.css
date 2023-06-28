@@ -101,11 +101,16 @@ body {
 
 /* CONVERSOR DE DIVISAS */
 
-.contenedor-botones-conversion {
+.contenedor-botones-conversion,
+.contenedor-boton-divisa-cambios{
   display: flex;
   margin: auto;
   padding: 15px 0;
   max-width: 300px;
+}
+.contenedor-boton-divisa-cambios{
+  flex-direction: column;
+  padding-bottom: 0px;
 }
 .contenedor-input {
   display: flex;
@@ -203,5 +208,40 @@ select.lista-monedas-selectores {
 .fecha-cambio {
   text-align: end;
 }
+.contenedor-boton-cambios{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0px 24px;
+  max-width: 375px;
+}
+.columna-agregar-divisa{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.contenedor-icono-agregar-divisa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 37px;
+  width: 67px;
+}
+.icono-agregar-divisa{
+  cursor: pointer;
+  text-align: center;
+  font-size: 30px;
+}
+.icono-agregar-divisa:hover{
+  font-size: 35px;
+  transition-duration: 0.5s;
+}
+.columna-boton-agregar-divisa{
+  padding-left: 0;
+  padding-right: 0;
+}
 
 /* FOOTER */
+
+#oculto{
+  display: none;
+}
