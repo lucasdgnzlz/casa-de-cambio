@@ -10,37 +10,11 @@
     <title>Casa de cambio</title>
   </head>
   <body>
-    <!-- IMPLEMENTAR MÁS ADELANTE
-
-      <header>
-        <nav class="navegacion">
-          <div class="contenedor-logo">
-            <h2 class="logo">XYZ</h2>
-          </div>
-          <div class="menu">
-            <ul class="lista-secciones">
-              <li class="seccion"><a class="seccion-cambios">Cambios de divisas</a></li>
-              <li class="seccion"><a class="seccion-cambios">Conversión</a></li>
-              <li class="seccion"><a class="seccion-cambios">Sobre nosotros</a></li>
-              <li class="seccion"><a class="seccion-cambios">Redes</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-    
-    -->
-
-    <!-- MAIN -->
-
     <main>
       <section>
-        <!-- TITULO -->
-
         <div class="container contenedor-titulo">
           <h1 class="titulo">Bienvenido a Casa de Cambio XYZ</h1>
         </div>
-
-        <!-- SUBTITULO -->
 
         <div class="contenedor-subtitulo">
           <p class="subtitulo">
@@ -49,8 +23,6 @@
             y descubre cómo podemos facilitar tus operaciones financieras.
           </p>
         </div>
-
-        <!-- BOTONES -->
 
         <div class="contenedor-botones">
           <button
@@ -72,8 +44,6 @@
         </div>
       </section>
 
-      <!-- SECCIÓN SOBRE NOSOTROS -->
-
       <section class="sobre-nosotros">
         <div class="contenedor-informacion">
           <h2 class="titulo-seccion">Sobre nosotros</h2>
@@ -85,8 +55,6 @@
         </div>
       </section>
 
-      <!-- SECCIÓN CONVERSIÓN DE DIVISAS -->
-
       <section class="conversion-divisas" id="conversion-de-divisas">
         <div class="contenedor-informacion">
           <h2 class="titulo-seccion">Conversión de divisas</h2>
@@ -97,8 +65,10 @@
 
         <div class="contenedor-conversor">
           <div class="contenedor-botones-conversion">
-            <select class="form-select lista-monedas-selectores moneda-usuario" aria-label="Default select example">
-            </select>
+            <select
+              class="form-select lista-monedas-selectores moneda-usuario"
+              aria-label="Default select example"
+            ></select>
           </div>
 
           <div class="contenedor-icono-conversion">
@@ -106,13 +76,20 @@
           </div>
 
           <div class="contenedor-botones-conversion">
-            <select class="form-select lista-monedas-selectores moneda-a-cambiar" aria-label="Default select example">
-            </select>
+            <select
+              class="form-select lista-monedas-selectores moneda-a-cambiar"
+              aria-label="Default select example"
+            ></select>
           </div>
 
           <div class="contenedor-input">
             <div class="input-group">
-              <input type="number" aria-label="plata-usuario" class="form-control plata-usuario" placeholder="Monto a convertir">
+              <input
+                type="number"
+                aria-label="plata-usuario"
+                class="form-control plata-usuario"
+                placeholder="Monto a convertir"
+              />
             </div>
           </div>
         </div>
@@ -123,23 +100,30 @@
         </div>
 
         <div class="contenedor-boton-convertir">
-          <button type="button" class="btn btn-secondary btn-lg botones boton-convertir" id="boton-cambios">
-            Convertir
-          </button>
+          <button type="button" class="btn btn-secondary btn-lg botones boton-convertir">Convertir</button>
         </div>
       </section>
-
-      <!-- SECCIÓN CAMBIOS DE DIVISAS -->
 
       <section class="cambios-de-divisas" id="cambios-de-divisas">
         <div class="contenedor-informacion">
           <h2 class="titulo-seccion">Cambios de divisas</h2>
           <p class="descripcion">
-            Nos enorgullece ofrecerte acceso a una amplia gama de divisas de todo el mundo. A
-            través de nuestra API actualizada, te brindamos información precisa sobre los últimos cambios en más de 100
-            monedas diferentes. Para tu comodidad, aquí puedes encontrar los cambios recientes de nuestras 5 divisas
-            principales.
+            Nos enorgullece ofrecerte acceso a una amplia gama de divisas de todo el mundo. A través de nuestra API
+            actualizada, te brindamos información precisa sobre los últimos cambios en más de 100 monedas diferentes.
+            Para tu comodidad, aquí puedes encontrar los cambios recientes de nuestras 5 divisas principales en base
+            USD, pero puedes elegir la divisa que desees.
           </p>
+        </div>
+
+        <div class="contenedor-boton-divisa-cambios">
+          <select class="form-select lista-monedas-selectores moneda-base-cambio">
+            <option selected>USD</option>
+          </select>
+          <div class="contenedor-boton-cambios">
+            <button type="button" class="btn btn-secondary btn-lg botones boton-comprobar-cambios" id="boton-cambios">
+              Buscar
+            </button>
+          </div>
         </div>
 
         <div class="contenedor-tabla-cambios">
@@ -175,19 +159,25 @@
               <td class="columna fecha-cambio">-</td>
             </tr>
             <tr class="fila">
-              <td class="columna principales-divisas">
-                <button type="button" class="btn btn-outline-secondary boton-agregar-divisa">
-                  <i class="fa-solid fa-plus fa-flip"></i>
-                </button>
+              <td class="columna principales-divisas columna-agregar-divisa">
+                <select class="form-select form-select-sm lista-monedas-selectores">
+                </select>
+              </td>
+              <td class="columna valor-divisa columna-boton-agregar-divisa">
+                <button type="button" class="btn btn-secondary">Agregar</button>
+              </td>
+              <td class="columna fecha-cambio">-</td>
+            </tr>
+            <tr class="fila" id="oculto">
+              <td class="columna principales-divisas columna-agregar-divisa">
+                <div class="contenedor-icono-agregar-divisa">
+                  <i class="fa-solid fa-plus icono-agregar-divisa"></i>
+                </div>
               </td>
               <td class="columna valor-divisa">-</td>
               <td class="columna fecha-cambio">-</td>
             </tr>
           </table>
-        </div>
-
-        <div class="contenedor-botones">
-          <button type="button" class="btn btn-secondary btn-lg botones" id="boton-cambios">Ver lista completa</button>
         </div>
 
         <div class="contenedor-informacion informacion-dos">
@@ -202,8 +192,6 @@
         </div>
       </section>
     </main>
-
-    <!-- FOOTER -->
 
     <footer>
       <section class="creditos">
