@@ -15,6 +15,9 @@
 body {
   background-color: var(--color-blanco-grisaseo);
 }
+header{
+  background-color: var(--color-azul-oscuro);
+}
 .contenedor-titulo {
   display: flex;
   justify-content: center;
@@ -22,7 +25,6 @@ body {
   padding: 30px 24px;
   padding-bottom: 15px;
   max-width: 390px;
-  background-color: var(--color-azul-oscuro);
 }
 .titulo {
   font-size: 40px;
