@@ -146,6 +146,7 @@ header{
 }
 .contenedor-input {
   display: flex;
+  flex-direction: column;
   margin: auto;
   padding: 20px 0;
   padding-bottom: 0px;
@@ -236,6 +237,9 @@ select.lista-monedas-selectores {
   border-bottom: 1px solid var(--color-gris-medio);
   padding: 25px;
   color: var(--color-azul-oscuro);
+}
+.columna-titulo{
+  color: var(--color-blanco-grisaseo);
 }
 .valor-divisa {
   text-align: end;
