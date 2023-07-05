@@ -20,11 +20,13 @@
   </head>
   <body>
     <main>
-      <section>
+      <header>
         <div class="container contenedor-titulo">
           <h1 class="titulo">Bienvenido a Casa de Cambio XYZ</h1>
         </div>
-
+      </header>
+      
+      <section>
         <div class="contenedor-subtitulo">
           <p class="subtitulo">
             En Casa de Cambio XYZ, te brindamos una forma rápida y segura de obtener información sobre cambios de
@@ -36,7 +38,7 @@
         <div class="contenedor-botones">
           <button
             type="button"
-            class="btn btn-secondary btn-lg botones"
+            class="btn btn-secondary btn-lg botones-conversion botones"
             id="boton-conversion"
             onclick="location.href='#conversion-de-divisas'"
           >
@@ -44,7 +46,7 @@
           </button>
           <button
             type="button"
-            class="btn btn-secondary btn-lg botones"
+            class="btn btn-secondary btn-lg botones-conversion botones"
             id="boton-cambios"
             onclick="location.href='#cambios-de-divisas'"
           >
@@ -102,15 +104,9 @@
             ></select>
           </div>
 
-          <div class="contenedor-input">
-            <div class="input-group">
-              <input
-                type="number"
-                aria-label="plata-usuario"
-                class="form-control plata-usuario"
-                placeholder="Monto a convertir"
-              />
-            </div>
+          <div class="col-md-6 contenedor-input">
+            <input type="number" class="form-control plata-usuario" id="validationCustom03" required placeholder="Monto a convertir">
+            <div class="invalid-feedback contenedor-texto-error"></div>
           </div>
         </div>
 
@@ -140,7 +136,11 @@
             <option selected>USD</option>
           </select>
           <div class="contenedor-boton-cambios">
-            <button type="button" class="btn btn-secondary btn-lg botones boton-comprobar-cambios" id="boton-cambios">
+            <button
+              type="button"
+              class="btn btn-secondary btn-lg botones-conversion botones boton-comprobar-cambios"
+              id="boton-cambios"
+            >
               Buscar
             </button>
           </div>
@@ -148,10 +148,10 @@
 
         <div class="contenedor-tabla-cambios">
           <table class="tablero">
-            <tr class="fila">
-              <th class="columna">Moneda</th>
-              <th class="columna">Valor</th>
-              <th class="columna">Fecha</th>
+            <tr class="fila fila-titulos-tabla">
+              <th class="columna columna-titulo">Moneda</th>
+              <th class="columna columna-titulo">Valor</th>
+              <th class="columna columna-titulo">Fecha</th>
             </tr>
             <tr class="fila">
               <td class="columna principales-divisas">-</td>
@@ -183,7 +183,7 @@
                 <select class="form-select form-select-sm lista-monedas-selectores divisa-para-agregar"></select>
               </td>
               <td class="columna valor-divisa columna-boton-agregar-divisa">
-                <button type="button" class="btn btn-secondary boton-agregar-divisa">Agregar</button>
+                <button type="button" class="btn btn-secondary botones boton-agregar-divisa">Agregar</button>
               </td>
               <td class="columna fecha-cambio">-</td>
             </tr>

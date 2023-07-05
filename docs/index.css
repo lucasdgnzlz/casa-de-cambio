@@ -4,6 +4,7 @@
   --color-gris-medio: #bfbfbf;
   --color-gris-oscuro: #6C757D;
   --color-gris-mas-oscuro: #3d3d3d;
+  --color-azul-oscuro:#233D4D;
 
   --font-weight-uno: 400;
   --font-weight-dos: 600;
@@ -14,12 +15,14 @@
 body {
   background-color: var(--color-blanco-grisaseo);
 }
+header{
+  background-color: var(--color-azul-oscuro);
+}
 .contenedor-titulo {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  padding: 45px 24px;
-  padding-bottom: 0px;
+  padding: 30px 24px;
   max-width: 390px;
 }
 .titulo {
@@ -27,31 +30,35 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: var(--font-weight-dos);
   text-align: center;
+  color: var(--color-blanco-grisaseo);
 }
 .contenedor-subtitulo {
   display: flex;
   margin: auto;
   max-width: 450px;
-  padding: 25px 24px;
+  padding: 40px 24px;
 }
 .subtitulo {
   font-family: Source Sans Pro, Arial, sans-serif;
   text-align: center;
+  color: var(--color-azul-oscuro);
 }
 .contenedor-botones {
   display: flex;
   flex-direction: column;
   margin: auto;
   padding: 0px 24px;
-  padding-top: 30px;
   max-width: 375px;
 }
-.botones {
+.botones-conversion {
   font-size: 16px;
   font-weight: 500;
   margin: 8px;
   height: 55px;
   border-radius: 6px;
+}
+.botones{
+  background-color: var(--color-azul-oscuro);
 }
 
 /* SOBRE NOSOTROS */
@@ -92,6 +99,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: var(--font-weight-dos);
   text-align: center;
+  color: var(--color-azul-oscuro);
 }
 .titulo-seccion-sobre-nosotros{
   display: flex;
@@ -102,6 +110,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: var(--font-weight-dos);
   text-align: center;
+  color: var(--color-azul-oscuro);
 }
 .descripcion {
   display: flex;
@@ -110,6 +119,7 @@ body {
   margin-top: 24px;
   margin-bottom: 0px;
   max-width: 400px;
+  color: var(--color-azul-oscuro);
 }
 .descripcion-sobre-nosotros{
   display: flex;
@@ -118,6 +128,7 @@ body {
   margin-top: 24px;
   margin-bottom: 0px;
   max-width: 400px;
+  color: var(--color-azul-oscuro);
 }
 
 /* CONVERSOR DE DIVISAS */
@@ -135,6 +146,7 @@ body {
 }
 .contenedor-input {
   display: flex;
+  flex-direction: column;
   margin: auto;
   padding: 20px 0;
   padding-bottom: 0px;
@@ -157,6 +169,7 @@ select.lista-monedas-selectores {
 }
 .icono-conversion {
   font-size: 40px;
+  color: var(--color-azul-oscuro);
 }
 .contenedor-respuesta-conversion {
   display: flex;
@@ -205,6 +218,7 @@ select.lista-monedas-selectores {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: var(--font-weight-dos);
   text-align: center;
+  color: var(--color-azul-oscuro);
 }
 .contenedor-tabla-cambios {
   display: flex;
@@ -222,12 +236,20 @@ select.lista-monedas-selectores {
 .columna {
   border-bottom: 1px solid var(--color-gris-medio);
   padding: 25px;
+  color: var(--color-azul-oscuro);
+}
+.columna-titulo{
+  color: var(--color-blanco-grisaseo);
 }
 .valor-divisa {
   text-align: end;
 }
 .fecha-cambio {
   text-align: end;
+}
+.fila-titulos-tabla{
+  background-color: var(--color-azul-oscuro);
+  color: #FFFF;
 }
 .contenedor-boton-cambios{
   display: flex;
@@ -268,7 +290,8 @@ footer{
   justify-content: center;
   justify-items: center;
   height: 115px;
-  background-color: var(--color-gris-oscuro);
+  background-color: var(--color-azul-oscuro);
+  color: white;
 }
 .contenedor-creditos{
   margin-top: 16px;
