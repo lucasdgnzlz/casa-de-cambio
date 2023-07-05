@@ -43,7 +43,8 @@ let listaDivisas;
 let resultadoConversion;
 
 function hacerCambioMoneda(montoAConvertir, monedaACambiar) {
-  let resultadoCambio = montoAConvertir * listaDivisas[monedaACambiar];
+  const monedaUsuario = Number(montoAConvertir);
+  let resultadoCambio = monedaUsuario * listaDivisas[monedaACambiar];
   resultadoConversion = resultadoCambio.toLocaleString("es-ES");
 }
 
@@ -55,12 +56,25 @@ function mostrarResultado(montoAConvertir, monedaUsuario, monedaACambiar) {
   $respuestaValorDivisaUsuario.textContent = `1 ${monedaUsuario} = ${listaDivisas[monedaACambiar]} ${monedaACambiar}`;
 }
 
+function mostrarErrorValidadcion(error) {
+  const $inputMontoUsuario = document.querySelector(".plata-usuario");
+  $inputMontoUsuario.classList.add("is-invalid");
+  const $contenedorTextoError = document.querySelector(".contenedor-texto-error");
+  $contenedorTextoError.innerText = error;
+}
+
+function dejarDeMostrarError() {
+  const $inputMontoUsuario = document.querySelector(".plata-usuario");
+  $inputMontoUsuario.classList.remove("is-invalid");
+  const $contenedorTextoError = document.querySelector(".contenedor-texto-error");
+  $contenedorTextoError.innerText = "";
+}
+
 function gestionarConversion(montoAConvertir, monedaUsuario, monedaACambiar) {
   fetch(`https://api.exchangerate.host/latest?base=${monedaUsuario}`)
     .then((respuesta) => respuesta.json())
     .then((data) => {
       listaDivisas = data.rates;
-      console.log(`Cambio en base ${data.base}`);
       hacerCambioMoneda(montoAConvertir, monedaACambiar);
       mostrarResultado(montoAConvertir, monedaUsuario, monedaACambiar);
     });
@@ -71,7 +85,14 @@ $botonConvertirDivisa.addEventListener("click", () => {
   const monedaUsuario = document.querySelector(".moneda-usuario").value;
   const monedaACambiar = document.querySelector(".moneda-a-cambiar").value;
 
-  gestionarConversion(montoAConvertir, monedaUsuario, monedaACambiar);
+  let error = validarMontoUsuario(montoAConvertir);
+
+  if (error != "") {
+    mostrarErrorValidadcion(validarMontoUsuario(montoAConvertir));
+  } else {
+    dejarDeMostrarError();
+    gestionarConversion(montoAConvertir, monedaUsuario, monedaACambiar);
+  }
 });
 
 // SECCIÓN CAMBIOS DE VALORES
