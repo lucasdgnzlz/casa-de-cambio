@@ -104,15 +104,9 @@
             ></select>
           </div>
 
-          <div class="contenedor-input">
-            <div class="input-group">
-              <input
-                type="number"
-                aria-label="plata-usuario"
-                class="form-control plata-usuario"
-                placeholder="Monto a convertir"
-              />
-            </div>
+          <div class="col-md-6 contenedor-input">
+            <input type="number" class="form-control plata-usuario" id="validationCustom03" required placeholder="Monto a convertir">
+            <div class="invalid-feedback contenedor-texto-error"></div>
           </div>
         </div>
 
@@ -155,9 +149,9 @@
         <div class="contenedor-tabla-cambios">
           <table class="tablero">
             <tr class="fila fila-titulos-tabla">
-              <th class="columna">Moneda</th>
-              <th class="columna">Valor</th>
-              <th class="columna">Fecha</th>
+              <th class="columna columna-titulo">Moneda</th>
+              <th class="columna columna-titulo">Valor</th>
+              <th class="columna columna-titulo">Fecha</th>
             </tr>
             <tr class="fila">
               <td class="columna principales-divisas">-</td>
