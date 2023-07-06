@@ -15,6 +15,7 @@
 body {
   background-color: var(--color-blanco-grisaseo);
 }
+/* HEADER */
 header{
   background-color: var(--color-azul-oscuro);
 }
@@ -31,7 +32,11 @@ header{
   font-weight: var(--font-weight-dos);
   text-align: center;
   color: var(--color-blanco-grisaseo);
+  margin: 0px;
 }
+
+/* INICIO */
+
 .contenedor-subtitulo {
   display: flex;
   margin: auto;
@@ -319,4 +324,23 @@ footer{
   font-size: 40px;
   cursor: pointer;
   text-decoration: none;
+}
+
+@media (min-width: 650px){
+  .contenedor-titulo{
+    max-width: 640px;
+  }
+  .contenedor-subtitulo {
+    max-width: 550px;
+    font-size: 17px;
+    padding: 40px 24px;
+  }
+  .descripcion-sobre-nosotros{
+    max-width: 550px;
+    font-size: 17px;
+  }
+  .descripcion {
+    max-width: 550px;
+    font-size: 17px;
+  }
 }
