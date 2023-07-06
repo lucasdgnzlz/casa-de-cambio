@@ -34,6 +34,9 @@ header{
   color: var(--color-blanco-grisaseo);
   margin: 0px;
 }
+.titulo::before{
+  content: "Bienvenido a Casa de Cambio XYZ";
+}
 
 /* INICIO */
 
@@ -327,6 +330,13 @@ footer{
 }
 
 @media (min-width: 650px){
+  .inicio{
+    padding-top: 50px;
+  }
+  header{
+    display: flex;
+    align-items: center;
+  }
   .contenedor-titulo{
     max-width: 640px;
   }
@@ -335,6 +345,9 @@ footer{
     font-size: 17px;
     padding: 40px 24px;
   }
+  .botones-conversion{
+    height: 70px;
+  }
   .descripcion-sobre-nosotros{
     max-width: 550px;
     font-size: 17px;
@@ -342,5 +355,27 @@ footer{
   .descripcion {
     max-width: 550px;
     font-size: 17px;
+  }
+}
+
+@media (min-width: 800px) {
+  .titulo::before{
+    content: "";
+  }
+  .titulo::after{
+    content: "Casa de cambio XYZ";
+    font-size: 55px;
+  }
+  .subtitulo {
+    font-size: 20px;
+  }
+  .descripcion-sobre-nosotros{
+    font-size: 20px;
+  }
+  .descripcion {
+    font-size: 20px;
+  }
+  .titulo-seccion{
+    font-size: 36px;
   }
 }
