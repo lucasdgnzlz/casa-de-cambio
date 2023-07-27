@@ -30,4 +30,16 @@ context("Casa De Cambio", () => {
       cy.get("footer").should("be.visible");
     });
   });
+
+  describe("Comprueba botones de inicio", () => {
+    it("Comprueba boton de inicio: Realizar una conversión", () => {
+      cy.get("#boton-conversion").should("be.visible").click();
+      cy.url().should("include", "#conversion-de-divisas");
+    });
+
+    it("Comprueba boton de inicio: Ver últimos cambios de divisas", () => {
+      cy.get("#boton-cambios").should("be.visible").click();
+      cy.url().should("include", "#cambios-de-divisas");
+    });
+  });
 });
