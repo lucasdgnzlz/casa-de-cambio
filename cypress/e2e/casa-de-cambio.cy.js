@@ -143,7 +143,7 @@ context("Casa De Cambio", () => {
       cy.get(".moneda-base-cambio").should("be.visible").select("GBP");
       cy.get(".boton-comprobar-cambios").should("be.visible").click();
 
-      cy.wait(2000)
+      cy.wait(2000);
       cy.get(".valor-divisa").then(($valorDivisa) => {
         cy.wrap($valorDivisa).should(($valor) => {
           const valorDivisa = $valor.text();
@@ -153,6 +153,56 @@ context("Casa De Cambio", () => {
           expect(valorDivisa).to.contain("1,698");
           expect(valorDivisa).to.contain("182,82");
           expect(valorDivisa).to.contain("1");
+        });
+      });
+    });
+  });
+
+  describe("Agrega una divisa extra a la tabla y comprueba su funcionamiento", () => {
+    it("Comprueba agregar divisa en tabla", () => {
+      cy.get(".principales-divisas").should("be.visible");
+      cy.get(".principales-divisas").should("have.length", "5");
+
+      cy.get(".divisa-para-agregar").should("be.visible").select("AOA");
+      cy.get(".boton-agregar-divisa").should("be.visible").click();
+
+      cy.get(".principales-divisas").should("be.visible");
+      cy.get(".principales-divisas").should("have.length", "6");
+      cy.get(".principales-divisas").contains("AOA");
+    });
+
+    it("Comprueba cambio de valor en la divisa agregada al seleccionar otra moneda base", () =>{
+      cy.get(".divisa-para-agregar").should("be.visible").select("AOA");
+      cy.get(".boton-agregar-divisa").should("be.visible").click();
+
+      cy.get(".valor-divisa").then(($valorDivisa) => {
+        cy.wrap($valorDivisa).should(($valor) => {
+          const valorDivisa = $valor.text();
+
+          expect(valorDivisa).to.contain("303,85");
+          expect(valorDivisa).to.contain("18,57");
+          expect(valorDivisa).to.contain("1,46");
+          expect(valorDivisa).to.contain("157,24");
+          expect(valorDivisa).to.contain("0,86");
+          expect(valorDivisa).to.contain("909,43");
+        });
+      });
+
+      cy.get(".moneda-base-cambio").should("be.visible").select("DJF");
+      cy.get(".boton-comprobar-cambios").should("be.visible").click();
+
+      cy.wait(2000)
+
+      cy.get(".valor-divisa").then(($valorDivisa) => {
+        cy.wrap($valorDivisa).should(($valor) => {
+          const valorDivisa = $valor.text();
+
+          expect(valorDivisa).to.contain("1,551");
+          expect(valorDivisa).to.contain("0,095");
+          expect(valorDivisa).to.contain("0,007");
+          expect(valorDivisa).to.contain("0,803");
+          expect(valorDivisa).to.contain("0,004");
+          expect(valorDivisa).to.contain("4,642");
         });
       });
     });
