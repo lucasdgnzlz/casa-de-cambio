@@ -20,13 +20,13 @@
   </head>
   <body>
     <main>
-      <header>
+      <header class="oculto">
         <div class="container contenedor-titulo">
           <h1 class="titulo"></h1>
         </div>
       </header>
-      
-      <section class="inicio">
+
+      <section class="inicio oculto">
         <div class="contenedor-subtitulo">
           <p class="subtitulo">
             En Casa de Cambio XYZ, te brindamos una forma rápida y segura de obtener información sobre cambios de
@@ -55,7 +55,7 @@
         </div>
       </section>
 
-      <section class="sobre-nosotros">
+      <section class="sobre-nosotros oculto">
         <div class="contenedor-informacion-sobre-nosotros-uno">
           <h2 class="titulo-seccion-sobre-nosotros">
             Casa de Cambio XYZ: Tu destino confiable para cambios de divisas seguros y convenientes
@@ -77,7 +77,7 @@
         </div>
       </section>
 
-      <section class="conversion-divisas" id="conversion-de-divisas">
+      <section class="conversion-divisas oculto" id="conversion-de-divisas">
         <div class="contenedor-informacion">
           <h2 class="titulo-seccion">Conversión de divisas</h2>
           <div class="descripcion">
@@ -105,7 +105,13 @@
           </div>
 
           <div class="col-md-6 contenedor-input">
-            <input type="number" class="form-control plata-usuario" id="validationCustom03" required placeholder="Monto a convertir">
+            <input
+              type="number"
+              class="form-control plata-usuario"
+              id="validationCustom03"
+              required
+              placeholder="Monto a convertir"
+            />
             <div class="invalid-feedback contenedor-texto-error"></div>
           </div>
         </div>
@@ -120,7 +126,7 @@
         </div>
       </section>
 
-      <section class="cambios-de-divisas" id="cambios-de-divisas">
+      <section class="cambios-de-divisas oculto" id="cambios-de-divisas">
         <div class="contenedor-informacion">
           <h2 class="titulo-seccion">Cambios de divisas</h2>
           <p class="descripcion">
@@ -203,7 +209,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="oculto">
       <section class="creditos">
         <div class="contenedor-creditos">
           <p>Hecho por Lucas Damián González</p>
@@ -220,6 +226,10 @@
         </div>
       </section>
     </footer>
+
+    <section class="pantalla-carga">
+      <i class="fa-solid fa-arrows-spin fa-spin icono-carga"></i>
+    </section>
 
     <script src="index.js"></script>
     <script src="validaciones.js"></script>
