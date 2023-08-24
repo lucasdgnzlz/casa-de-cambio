@@ -329,6 +329,26 @@ footer{
   text-decoration: none;
 }
 
+/* PANTALLA DE CARGA */
+
+.pantalla-carga{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.icono-carga{
+  font-size: 100px;
+}
+
+.oculto{
+  display: none;
+}
+#oculto{
+  display: none;
+}
+
 @media (min-width: 650px){
   .inicio{
     padding-top: 50px;
