@@ -1,3 +1,18 @@
+// SECCIÓN PANTALLA DE CARGA
+
+function dejarDeMostrarPantallaCarga() {
+  const $pantallaDeCarga = document.querySelector(".pantalla-carga");
+  $pantallaDeCarga.id = "oculto";
+}
+
+function mostrarPaginaPrincipal() {
+  const $elementosPrincipalesOcultos = document.querySelectorAll(".oculto");
+
+  $elementosPrincipalesOcultos.forEach(($elementoOculto) => {
+    $elementoOculto.classList.remove("oculto");
+  });
+}
+
 // SECCIÓN CREAR LISTAS DE LAS DIVISAS
 let fechaActualizacionValores;
 
@@ -33,6 +48,14 @@ fetch("https://api.exchangerate.host/latest")
     crearListaDivisas(data);
     mostrarPrincipalesDivisas(data);
     fechaActualizacionValores = data.date;
+
+    setTimeout(() => {
+      dejarDeMostrarPantallaCarga();
+      mostrarPaginaPrincipal();
+    }, 1300);
+  })
+  .catch((error) => {
+    console.error(error);
   });
 
 // SECCIÓN CONVERSIÓN
