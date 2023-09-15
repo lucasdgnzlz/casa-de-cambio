@@ -1,4 +1,4 @@
-function validarMontoUsuario(montoAConvertir) {
+export function validarMontoUsuario(montoAConvertir) {
   const regex = /^[0-9]+$/i;
 
   if (!regex.test(montoAConvertir)) {
