@@ -15,7 +15,7 @@ export async function realizarConversión() {
     dejarDeMostrarError();
     try {
       const data = await obtenerData(monedaUsuario);
-      gestionarConversion(data.rates, montoAConvertir, monedaUsuario, monedaACambiar);
+      gestionarConversion(data.conversion_rates, montoAConvertir, monedaUsuario, monedaACambiar);
     } catch (error) {
       console.error("Error al obtener los datos de la API:", error);
     }
