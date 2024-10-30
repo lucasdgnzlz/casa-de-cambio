@@ -2,7 +2,7 @@ import { validarMontoUsuario } from "./validaciones.js";
 import { mostrarErrorValidadcion, dejarDeMostrarError } from "./ui.js";
 import { obtenerData } from "./exchange.js";
 
-export async function realizarConversión() {
+export async function realizarConversion() {
   const montoAConvertir = document.querySelector(".plata-usuario").value;
   const monedaUsuario = document.querySelector(".moneda-usuario").value;
   const monedaACambiar = document.querySelector(".moneda-a-cambiar").value;
