@@ -2,7 +2,7 @@ import { obtenerData } from "./exchange.js";
 
 import { gestionarInicioUI, gestionarAgregarDivisa } from "./ui.js";
 
-import { realizarConversión } from "./conversion.js";
+import { realizarConversion } from "./conversion.js";
 
 import { gestionarUltimosCambiosDivisas } from "./cambios.js";
 
@@ -12,7 +12,7 @@ async function iniciarPagina() {
 iniciarPagina();
 
 const $botonConvertirDivisa = document.querySelector(".boton-convertir");
-$botonConvertirDivisa.addEventListener("click", realizarConversión);
+$botonConvertirDivisa.addEventListener("click", realizarConversion);
 
 const $botonComprobarUltimosCambios = document.querySelector(".boton-comprobar-cambios");
 $botonComprobarUltimosCambios.addEventListener("click", gestionarUltimosCambiosDivisas);

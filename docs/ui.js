@@ -1,7 +1,8 @@
 import { obtenerData } from "./exchange.js";
+import { filtrarPrincipalesDivisas } from "./utilidades.js";
 
 export function gestionarInicioUI(data) {
-  crearListaDivisas(data.rates);
+  crearListaDivisas(data.conversion_rates);
   mostrarPrincipalesDivisas(data);
   dejarDeMostrarPantallaCarga();
   mostrarPaginaPrincipal();
@@ -46,8 +47,10 @@ function crearListaDivisas(dataDivisas) {
 }
 
 export function mostrarPrincipalesDivisas(dataDivisas) {
-  let listaNombresDivisas = Object.keys(dataDivisas.rates);
-  let divisas = dataDivisas.rates;
+  let divisas = dataDivisas.conversion_rates;
+  let listaNombresDivisas = Object.keys(dataDivisas.conversion_rates);
+
+  const principalesDivisas = filtrarPrincipalesDivisas(divisas, listaNombresDivisas);
 
   const $nombreDivisas = document.querySelectorAll(".principales-divisas");
   const $valorDivisas = document.querySelectorAll(".valor-divisa");
@@ -55,24 +58,24 @@ export function mostrarPrincipalesDivisas(dataDivisas) {
 
   $nombreDivisas.forEach((divisa, index) => {
     if (index === 0) {
-      divisa.textContent = listaNombresDivisas[6];
-      $valorDivisas[index].textContent = divisas[listaNombresDivisas[6]].toLocaleString("es-ES").substring(0, 6);
+      divisa.textContent = principalesDivisas["ars"]["nombre"];
+      $valorDivisas[index].textContent = principalesDivisas.ars["valor"].toLocaleString("es-ES").substring(0, 6);
       $fechaDeCambio[index].textContent = dataDivisas.date;
     } else if (index === 1) {
-      divisa.textContent = listaNombresDivisas[100];
-      $valorDivisas[index].textContent = divisas[listaNombresDivisas[100]].toLocaleString("es-ES").substring(0, 6);
+      divisa.textContent = principalesDivisas.brl["nombre"];
+      $valorDivisas[index].textContent = principalesDivisas.brl["valor"].toLocaleString("es-ES").substring(0, 6);
       $fechaDeCambio[index].textContent = dataDivisas.date;
     } else if (index === 2) {
-      divisa.textContent = listaNombresDivisas[26];
-      $valorDivisas[index].textContent = divisas[listaNombresDivisas[26]].toLocaleString("es-ES").substring(0, 6);
+      divisa.textContent = principalesDivisas.cad["nombre"];
+      $valorDivisas[index].textContent = principalesDivisas.cad["valor"].toLocaleString("es-ES").substring(0, 6);
       $fechaDeCambio[index].textContent = dataDivisas.date;
     } else if (index === 3) {
-      divisa.textContent = listaNombresDivisas[73];
-      $valorDivisas[index].textContent = divisas[listaNombresDivisas[73]].toLocaleString("es-ES").substring(0, 6);
+      divisa.textContent = principalesDivisas.eur["nombre"];
+      $valorDivisas[index].textContent = principalesDivisas.eur["valor"].toLocaleString("es-ES").substring(0, 6);
       $fechaDeCambio[index].textContent = dataDivisas.date;
     } else if (index === 4) {
-      divisa.textContent = listaNombresDivisas[49];
-      $valorDivisas[index].textContent = divisas[listaNombresDivisas[49]].toLocaleString("es-ES").substring(0, 6);
+      divisa.textContent = principalesDivisas.gbp["nombre"];
+      $valorDivisas[index].textContent = principalesDivisas.gbp["valor"].toLocaleString("es-ES").substring(0, 6);
       $fechaDeCambio[index].textContent = dataDivisas.date;
     }
   });
@@ -96,7 +99,7 @@ export function actualizarValoresLista(data, listaNombresDivisasEnTabla) {
   const $valoresDivisasEnLista = document.querySelectorAll(".valor-divisa");
 
   $valoresDivisasEnLista.forEach((valorDivisa, i) => {
-    valorDivisa.textContent = data.rates[listaNombresDivisasEnTabla[i]].toLocaleString("es-ES").substring(0, 6);
+    valorDivisa.textContent = data.conversion_rates[listaNombresDivisasEnTabla[i]].toLocaleString("es-ES").substring(0, 6);
   });
 }
 
@@ -117,7 +120,7 @@ function agregarDivisaElegidaALista(divisaParaAgregar, data) {
 
   const nuevaColumnaValorDivisa = document.createElement("td");
   nuevaColumnaValorDivisa.className = "columna valor-divisa";
-  nuevaColumnaValorDivisa.textContent = data.rates[divisaParaAgregar].toLocaleString("es-ES").substring(0, 6);
+  nuevaColumnaValorDivisa.textContent = data.conversion_rates[divisaParaAgregar].toLocaleString("es-ES").substring(0, 6);
 
   const nuevaColumnaFechaUltimoCambio = document.createElement("td");
   nuevaColumnaFechaUltimoCambio.className = "columna fecha-cambio";
@@ -160,7 +163,7 @@ function crearNuevaUltimaFila() {
 
 function agregarDivisasASelectorUltimaFila(data) {
   const $selectorDivisaUltimosCambios = document.querySelector(".divisa-para-agregar");
-  const nombresDivisas = Object.keys(data.rates);
+  const nombresDivisas = Object.keys(data.conversion_rates);
 
   nombresDivisas.forEach((divisa) => {
     const nuevaOpcionDeDivisa = document.createElement("option");
